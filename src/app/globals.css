@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5efe3;
+  --foreground: #1f3d2f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* 墨綠與米白色票 */
+@theme {
+  --color-ink: #1f3d2f;
+  --color-ink-dark: #152b21;
+  --color-ink-light: #3f6150;
+  --color-cream: #f5efe3;
+  --color-sand: #e9e0cd;
+  --color-sand-dark: #d8ccb2;
+}
+
+/* 暗色模式：由 <html data-theme="dark"> 控制（見 layout.tsx 與 ThemeToggle） */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* 暗色色票：底色轉深、文字轉淺，沿用同一組色名，元件不需逐一改寫 */
+[data-theme="dark"] {
+  --background: #121a16;
+  --foreground: #e8e1d1;
+  --color-ink: #e8e1d1;
+  --color-ink-dark: #0b110e;
+  --color-ink-light: #b5c2b8;
+  --color-cream: #121a16;
+  --color-sand: #1a2620;
+  --color-sand-dark: #253429;
+  color-scheme: dark;
+}
+
+/* 原本就是墨綠深色的區塊（頁首、頁尾、故事區等），暗色模式下維持原樣 */
+[data-theme="dark"] .theme-keep {
+  --color-ink: #1f3d2f;
+  --color-ink-dark: #152b21;
+  --color-ink-light: #3f6150;
+  --color-cream: #f5efe3;
+  --color-sand: #e9e0cd;
+  --color-sand-dark: #d8ccb2;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
