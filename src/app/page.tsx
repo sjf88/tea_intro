@@ -100,7 +100,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               一葉匠心
               <br />
-              一杯台灣好茶
+              台灣好茶
             </h1>
             <p className="max-w-lg text-base leading-8 text-ink-light sm:text-lg">
               從雲霧繚繞的高山茶園，到職人手中的揉捻與焙火，
